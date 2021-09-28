@@ -1,0 +1,218 @@
+* {
+    transition: .8s all ease-in-out;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+form {
+    width: 60%;
+    height: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;   
+    margin:2rem 0;
+}
+
+form input {
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+    outline-width: 0px;
+    border: none;
+    box-shadow: 1px 1px 10px -4px black;
+    padding: 5px;
+    font-size: 20px;
+    padding-left: 20px;
+    opacity: .6;
+}
+
+@media screen and (max-width: 700px){
+    form {
+        width: 90%;
+    }
+    form input {
+        width: 100%;
+    }
+    form input::placeholder {
+        padding-left: 0 !important;
+    }
+    .food-container {
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
+
+}
+
+form input:focus {
+    opacity: 1;
+}
+
+form input::placeholder {
+    padding-left: 20px;
+}
+
+.searchButton {
+    height: 100%;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px -4px black;
+    cursor: pointer;
+    color: rgb(10, 10, 10);
+    font-size: 20px;
+    background-image:linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);;
+    transition: 1s background ease-in-out;
+}
+
+form .searchButton:hover {
+    background: white;
+    color: black;
+}
+
+.food-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.food-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, 320px);
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.food-container div {
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: all .7s ease-in-out;
+}
+
+.food-container div:hover .lists{
+    overflow-y: scroll;
+    cursor: pointer;
+    scrollbar-width: 10px;
+    transition: .4s overflow-y ease-in-out;
+    list-style-type: decimal;
+}
+
+.food-container div:hover .calories {
+    top: 0;
+}
+
+.image-container2 {
+    position: relative;
+}
+
+.calories {
+    position: absolute;
+    overflow: auto;
+    top: -6rem;
+    left: 0;
+    height: 10px;
+    background-color: black;
+    height: 30%;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(201, 201, 201);
+    transition: .7s top;
+}
+
+.image {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.lists {
+    margin-left: 25px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingCircle {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 20px;
+    animation-name: Rotate;
+    animation-play-state: running;
+    animation-duration: 1.5s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+
+.loadingCircle::after {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: 3px solid white;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    animation-name: Rotate;
+    animation-play-state: running;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+
+.notFound {
+    background-color: transparent !important;
+    width: 100%;
+    text-align: center;
+}
+
+.notFound h5 {
+    font-size: 22px;
+}
+
+.notFound .searchButton {
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 2px 2px -10px -1px black;
+}
+
+.notFound .searchButton:hover {
+    background-color: white;
+    background-image: none;
+}
+
+@keyframes Rotate {
+
+    100% {
+        transform: scale(1.2);
+        transform: rotate(360deg);
+    }
+    
+}
+
+
